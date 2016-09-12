@@ -1,1 +1,33 @@
-Hello, totruearr.site!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toTrueArr</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+
+    <script type="text/javascript">
+      function toTrueArr(arr) {
+        return arr.map(function() {
+          return true;
+        })
+      }
+
+      function onBtnClick() {
+        var simpleArray = document.getElementById('simpleArray').value.split(',');
+        var trueArr = toTrueArr(simpleArray);
+        var trueArrElement = document.getElementById('trueArray');
+        trueArr.forEach(function(val) {
+          var span = document.createElement('span');
+          span.innerHTML = val;
+          span.className = 'trueItem';
+          trueArrElement.appendChild(span);
+        });
+      }
+    </script>
+</head>
+<body>
+  <input id="simpleArray" type="text" />
+  <button onclick="onBtnClick()">To True Obj!</button>
+  <div id="trueArray"></div>
+</body>
+</html>
